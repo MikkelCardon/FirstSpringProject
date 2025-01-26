@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Random;
+
 @RestController
 @RequestMapping("/Main")
 public class HelloController {
@@ -18,4 +20,11 @@ public class HelloController {
     public String addText(@PathVariable String text){
         return text;
     }
+
+    @GetMapping("/randomNumber-{interval}")
+    public int randomNumber(@PathVariable int interval){
+        Random rand = new Random();
+        return rand.nextInt(interval);
+    }
+
 }
