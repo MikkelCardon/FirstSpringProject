@@ -17,7 +17,7 @@ public class HelloController {
     }
 
     @GetMapping("/print:{text}")
-    public String addText(@PathVariable String text){
+    public String printText(@PathVariable String text){
         return text;
     }
 
