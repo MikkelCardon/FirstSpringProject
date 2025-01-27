@@ -16,15 +16,15 @@ public class HelloController {
         return "Hello World!";
     }
 
-    @GetMapping("/{text}")
+    @GetMapping("/print:{text}")
     public String addText(@PathVariable String text){
         return text;
     }
 
-    @GetMapping("/randomNumber-{interval}")
-    public int randomNumber(@PathVariable int interval){
+    @GetMapping("/randomNumber-{min}-{max}")
+    public int randomNumber(@PathVariable("min") int start, @PathVariable("max") int end){
         Random rand = new Random();
-        return rand.nextInt(interval);
+        return rand.nextInt(start, end+1);
     }
 
 }
