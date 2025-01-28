@@ -22,9 +22,9 @@ public class HelloController {
     }
 
     @GetMapping("/randomNumber-{min}-{max}")
-    public int randomNumber(@PathVariable("min") int start, @PathVariable("max") int end){
+    public String randomNumber(@PathVariable("min") int start, @PathVariable("max") int end){
         Random rand = new Random();
-        return rand.nextInt(start, end+1);
+        return "Dit tal: " + rand.nextInt(start, end+1);
     }
 
 }
